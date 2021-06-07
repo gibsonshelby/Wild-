@@ -1,9 +1,11 @@
 require('dotenv').config();
 const express = require('express');
+const multer = require ('multer')
 const app = express();
 const cors = require('cors');
 const apiRouter = require('./app/router');
-
+const bodyParser = multer();
+app.use(bodyParser.none());
 const PORT = process.env.PORT || 5555;
 
 app.use(cors({origin:"*"}));
