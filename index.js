@@ -4,6 +4,7 @@ const multer = require ('multer')
 const app = express();
 const cors = require('cors');
 const apiRouter = require('./app/router');
+app.use(express.urlencoded({ extended: true }));
 const bodyParser = multer();
 app.use(bodyParser.none());
 const PORT = process.env.PORT || 5555;
