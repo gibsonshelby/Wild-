@@ -8,8 +8,6 @@ POST  http://localhost:5555/user
 Content-Type: application/json
 
 {
-    "pseudo":"Tommy",
-    "password":"tommy",
-    "email":"tommy@gmail.com"
+    "name":"Tommy",
 
 }

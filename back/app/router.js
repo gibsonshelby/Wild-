@@ -16,6 +16,7 @@ router.get('/', (req, res, next) => {
     res.json('hello');
 });
 
+router.get('/user',authController.add)
 router.post('/user',authController.add);
 
 module.exports = router;
