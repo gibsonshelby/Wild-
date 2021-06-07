@@ -1,9 +1,9 @@
 const { Router } = require('express');
 
-const authController = require ('./controller/UserController');
+const userController = require ('./controller/UserController');
 const router = Router();
 
-// const authController = require('./controllers/authController');
+
 
 
 
@@ -12,11 +12,11 @@ const router = Router();
  * @route GET /
  */
 
-router.get('/', (req, res, next) => {
-    res.json('hello');
-});
+// router.get('/', (req, res, next) => {
+//     res.json('hello');
+// });
 
-router.get('/user',authController.add)
-router.post('/user',authController.add);
+router.get('/users',userController.getAll)
+router.post('/user',userController.add);
 
 module.exports = router;

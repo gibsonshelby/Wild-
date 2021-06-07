@@ -1,3 +1,4 @@
+const { user } = require('../database');
 const db = require('../database');
 
 
@@ -14,17 +15,13 @@ class User {
 
 
 
-static async findOne (name) {
-    const {rows} = await db.query('SELECT * "user" WHERE name = $1;' ,
-    [name]);
+static async findAll () {
+    const {rows} = await db.query('SELECT * FROM "user" ');
 
-    if (rows[0]){
-    return new User(rows[0]);
-
-    }else{
-        return null ; 
-    }
-
+    return rows.map((row)=>{
+        return new User(row) 
+    })
+   
 }
 
 async save (){

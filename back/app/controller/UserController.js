@@ -2,22 +2,15 @@ const User = require("../models/User");
 
 
 
+
 /**
  * 
  */
-const authController = {
+const userController = {
 
-    async add(req,res) {
+    add:async(req,res) => {
 
-        try { 
-                const userToCreate = await User.findOne(req.body.name)
-                 if(userToCreate){
-                    res.status(403).json("Name already exist")
-                    return 
-                }
-        }catch (err){
-            res.status(500).json("Error no response from server")
-        }
+      
 
         try{
             const user = new User({
@@ -31,9 +24,24 @@ const authController = {
            
 
         }catch(err){
-            res.status(500).json("error")
+            res.status(500).json(err.message)
         }
-    }
-    };
+    },
+     getAll:async(_,res)=>{
 
-module.exports= authController;
+        try {
+            const users = await User.findAll()
+            
+
+            res.json(users)
+            
+        }catch(err){
+            res.status(500).json(err.message)
+        }
+
+     }
+
+    };
+    
+
+module.exports= userController;
