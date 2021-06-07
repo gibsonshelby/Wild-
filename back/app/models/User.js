@@ -29,8 +29,9 @@ static async findOne (name) {
 
 async save (){
 
-    const user = await db.query('SELECT * FROM new_user($1);', )
-
+    const user = await db.query('SELECT * FROM new_user($1);',[this] )
+    this.id=user.rows[0].id
+  
 
 }
 

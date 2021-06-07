@@ -1,6 +1,6 @@
 ### GET alluser
 
-GET http://localhost:5555/users
+GET http://localhost:5555/user
 
 ### CREATE user
 

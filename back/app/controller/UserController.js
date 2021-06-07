@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/User");
 
 
 
@@ -12,7 +12,7 @@ const authController = {
         try { 
                 const userToCreate = await User.findOne(req.body.name)
                  if(userToCreate){
-                    res.status(403).json("Acount already exist")
+                    res.status(403).json("Name already exist")
                     return 
                 }
         }catch (err){
@@ -35,3 +35,5 @@ const authController = {
         }
     }
     };
+
+module.exports= authController;

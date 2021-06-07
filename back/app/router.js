@@ -1,5 +1,6 @@
 const { Router } = require('express');
 
+const authController = require ('./controller/UserController');
 const router = Router();
 
 // const authController = require('./controllers/authController');
@@ -15,6 +16,6 @@ router.get('/', (req, res, next) => {
     res.json('hello');
 });
 
-
+router.post('/user',authController.add);
 
 module.exports = router;
