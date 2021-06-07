@@ -8,6 +8,6 @@ POST  http://localhost:5555/user
 Content-Type: application/json
 
 {
-    "name":"cacacamille"
+    "name":"cacacamillegi"
 
 }
