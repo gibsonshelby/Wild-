@@ -2,8 +2,6 @@
 
 BEGIN;
 
-
-
 CREATE FUNCTION new_user(json) RETURNS "user" AS $$
 	INSERT INTO "user" (name)
 	VALUES (
